@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Date Plans ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #ffe1ec, #e3f2fd);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    h1 {
+      color: #d81b60;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 2px white;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      width: 220px;
+      height: 230px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #e91e63;
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        width: 90%;
+      }
+    }
+    #popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #ffe4ec;
+  padding: 25px 30px;
+  border-radius: 20px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 300px;
+}
+
+.popup-content h2 {
+  color: #d81b60;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.popup-content {
+  background: #ffe4ec;
+  padding: 25px 30px;
+  border-radius: 20px;
+  text-align: center;
+  animation: fadeIn 0.4s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  max-width: 300px;
+  position: relative;
+}
+
+nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e91e63;
+      padding: 10px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+@keyframes fadeIn {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #d81b60;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+  </style>
+</head>
+  <header>
+    <h1>Date 💌</h1>
+  </header>
+
+  <nav>
+    <a href="page1.html">Home</a>
+    <a href="page2.html">Message</a>
+    <a href="page3.html">Memories</a>
+    <a href="page4.html">To Remember</a>
+    <a href="date.html">Surprise</a>
+  </nav>
+
+<body>
+  <h1>Our Future Date Ideas 💑</h1>
+  <div class="container">
+    <div class="card" onclick="showMessage('Movie Night 🎬', 'Let’s cuddle on the sofa, eat popcorn and watch your favorite movie!')">
+      <img src="https://img.icons8.com/emoji/96/popcorn-emoji.png" alt="Movie Night" />
+      <h3>Movie Time</h3>
+      <p>Butter popcorn, cuddles & scary thrillers!</p>
+    </div>
+    <div class="card" onclick="showMessage('Café Hangout ☕', 'Long talks over coffee, your favorite dessert & endless smiles.')">
+      <img src="https://img.icons8.com/color/96/coffee-to-go.png" alt="Cafe Hangout" />
+      <h3>Café Hangout</h3>
+      <p>Deep convos & coffee love</p>
+    </div>
+    <div class="card" onclick="showMessage('Dineer party 🎡', 'Candle light dinner, just you and me 💖 I’ll look, you smile.')">
+      <img src="dinner.jpg" alt="Dineer party" />
+      <h3>Dineer Party</h3>
+      <p>Thrill, laughs & sweet memories</p>
+    </div>
+    <div class="card" onclick="showMessage('Surprise Me! 🎁', 'Something magical is planned just for you — but shhh, it’s a surprise!')">
+      <img src="https://img.icons8.com/color/96/gift.png" alt="Surprise Me" />
+      <h3>Surprise Me!</h3>
+      <p>Shhh... It's a cute secret!</p>
+    </div>z
+  </div>
+  <audio id="bgMusic" src="pee loon.mp3" preload="auto" loop></audio>
+<p>
+        Choose and take screenshot and send me 😉💖
+      </p>
+
+  <script>
+  function showMessage(title, message) {
+    document.getElementById("popup-title").innerText = title;
+    document.getElementById("popup-message").innerText = message;
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  document.getElementById("popup").addEventListener("click", function(e) {
+    if (e.target.id === "popup" || e.target.id === "popup-content") {
+      document.getElementById("popup").style.display = "none";
+    }
+  });
+  function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+
+  </script>
+  <script>
+  const music = document.getElementById("bgMusic");
+
+  function playMusicOnce() {
+    music.play().catch((e) => {
+      console.log("Music play blocked by browser:", e);
+    });
+    document.removeEventListener("click", playMusicOnce);
+    document.removeEventListener("touchstart", playMusicOnce);
+  }
+
+  document.addEventListener("click", playMusicOnce);
+  document.addEventListener("touchstart", playMusicOnce);
+</script>
+
+  <div id="popup" style="display:none;">
+    <div class="popup-content" id="popup-content">
+      <span class="close-btn" onclick="closePopup()">×</span>
+      <h2 id="popup-title">Title</h2>
+      <p id="popup-message">Message</p>
+    </div>
+  </div>
+  
+</body>
+</html>

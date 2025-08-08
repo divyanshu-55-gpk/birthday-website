@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Birthday Message</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fce4ec, #f8bbd0);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 40px;
+      background-color: #f06292;
+      color: white;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #ec407a;
+      padding: 10px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .message-box {
+      max-width: 800px;
+      margin: auto;
+      padding: 30px;
+      background-color: #ffffffcc;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      font-size: 1.3em;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f06292;
+      color: white;
+      margin-top: 50px;
+    }
+    audio {
+      display: none;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>To the Most Special Girl 🎉</h1>
+  </header>
+
+  <nav>
+    <a href="page1.html">Home</a>
+    <a href="page2.html">Message</a>
+    <a href="page3.html">Memories</a>
+    <a href="page4.html">To Remember</a>
+    <a href="date.html">Surprise</a>
+  </nav>
+
+  <section>
+    <div class="message-box">
+      <p>
+        Happy Birthday, my love! 🎂💖 On this beautiful day, I just want to say how grateful I am to have you in my life. Your smile lights up my darkest days and your presence makes everything better. ❤️
+      </p>
+      <p>
+        I’ve made this small website to celebrate YOU. Every page is filled with love, just like my heart is full of love for you. May this year bring you endless happiness, success, and memories. Keep shining, my angel. 🌟
+      </p>
+      <p>
+        I love you more than words can say. Happy Birthday once again 💝
+      </p>
+    </div>
+  </section>
+
+  <audio id="bgMusic" src="vaaroon.mp3" preload="auto" loop></audio>
+
+
+  <footer>
+    Made with 💖 by Yours Truly
+  </footer>
+  <script>
+  const music = document.getElementById("bgMusic");
+
+  function playMusicOnce() {
+    music.play().catch((e) => {
+      console.log("Music play blocked by browser:", e);
+    });
+    document.removeEventListener("click", playMusicOnce);
+    document.removeEventListener("touchstart", playMusicOnce);
+  }
+
+  document.addEventListener("click", playMusicOnce);
+  document.addEventListener("touchstart", playMusicOnce);
+</script>
+
+</body>
+</html>

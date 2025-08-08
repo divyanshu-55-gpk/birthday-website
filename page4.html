@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Remember</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle, #ffe0b2, #ffcc80);
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 40px;
+      background-color: #ff9800;
+      color: white;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #fb8c00;
+      padding: 10px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+      animation: popIn 1s ease-out;
+    }
+    .surprise-box {
+      background-color: #fff3e0;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      font-size: 1.4em;
+    }
+    .heart {
+      font-size: 50px;
+      animation: heartbeat 1.2s infinite;
+      margin: 20px 0;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ff9800;
+      color: white;
+      margin-top: 50px;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Always Remember 💌</h1>
+  </header>
+
+  <nav>
+    <a href="page1.html">Home</a>
+    <a href="page2.html">Message</a>
+    <a href="page3.html">Memories</a>
+    <a href="page4.html">To Remember</a>
+    <a href="date.html">Surprise</a>
+  </nav>
+
+  <section>
+    <div class="surprise-box">
+      <div class="heart">❤️</div>
+      <p>
+        You are the most beautiful person I’ve ever met — inside and out.  
+        This website is just a little something to make you smile on your birthday. 😊  
+        But the biggest surprise? It's me — planning the most romantic date with you soon! 🎁🎉
+      </p>
+      <p>
+        Ignore if any mistake Because, it's made with my pure love 💖
+      </p>
+    </div>
+  </section>
+
+  <audio id="bgMusic" src="mitwa.mp3" preload="auto" loop></audio>
+
+
+  <footer>
+    Made With Love 💝
+  </footer>
+<script>
+  const music = document.getElementById("bgMusic");
+
+  function playMusicOnce() {
+    music.play().catch((e) => {
+      console.log("Music play blocked by browser:", e);
+    });
+    document.removeEventListener("click", playMusicOnce);
+    document.removeEventListener("touchstart", playMusicOnce);
+  }
+
+  document.addEventListener("click", playMusicOnce);
+  document.addEventListener("touchstart", playMusicOnce);
+</script>
+
+</body>
+</html>
+

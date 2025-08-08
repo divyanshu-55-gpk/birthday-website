@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday My Love</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #fff0f5);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #f8bbd0;
+    }
+    header h1 {
+      font-size: 3em;
+      color: #e91e63;
+      animation: pop 1s ease-in-out;
+      animation-fill-mode: both;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #f48fb1;
+      padding: 10px 0;
+      animation: slideDown 1s ease-in-out;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .her-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #e91e63;
+      margin: 20px auto;
+      box-shadow: 0 0 20px #e91e63;
+      transition: transform 0.3s;
+    }
+    .her-photo:hover {
+      transform: scale(1.05);
+    }
+    .message {
+      max-width: 700px;
+      margin: 30px auto;
+      font-size: 1.2em;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    @keyframes pop {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 30px auto;
+      max-width: 90%;
+    }
+    .gallery img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #f48fb1;
+      transition: 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #e91e63;
+    }
+    .surprise {
+      font-size: 1.5em;
+      margin-top: 30px;
+      cursor: pointer;
+      color: #e91e63;
+      transition: transform 0.3s;
+    }
+    .surprise:hover {
+      transform: scale(1.1);
+    }
+    #secret-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #880e4f;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8bbd0;
+      color: #e91e63;
+      margin-top: 40px;
+      animation: fadeIn 2s ease-in;
+    }
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Happy Birthday My Love ❤️</h1>
+  </header>
+
+  <nav>
+    <a href="page1.html">Home</a>
+    <a href="page2.html">Message</a>
+    <a href="page3.html">Memories</a>
+    <a href="page4.html">To Remember</a>
+    <a href="date.html">Surprise</a>
+  </nav>
+
+  <section id="home">
+    <img src="suku2.jpg" alt="Her Photo" class="her-photo">
+    <p style="margin-top:20px; font-size:1.3em;">Welcome to your special birthday surprise. 🎂💖</p>
+  </section>
+
+  <audio id="bgMusic" src="raataan.mp3" preload="auto" loop></audio>
+
+
+  <footer>
+    Made with 💖 by Yours Truly
+  </footer>
+  <script>
+  const music = document.getElementById("bgMusic");
+
+  function playMusicOnce() {
+    music.play().catch((e) => {
+      console.log("Music play blocked by browser:", e);
+    });
+    document.removeEventListener("click", playMusicOnce);
+    document.removeEventListener("touchstart", playMusicOnce);
+  }
+
+  document.addEventListener("click", playMusicOnce);
+  document.addEventListener("touchstart", playMusicOnce);
+</script>
+</body>
+</html>
+
